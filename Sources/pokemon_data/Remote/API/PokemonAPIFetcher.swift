@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol PokemonAPIFetcher {
+public protocol PokemonAPIFetcher: Sendable {
     func execute() async throws -> [PokemonDetailEntity]
 }

@@ -4,7 +4,7 @@ public enum PokemonAPIFetcherError: Error {
     case invalidURL
 }
 
-public final class PokemonAPIFetcherImpl: PokemonAPIFetcher {
+public final class PokemonAPIFetcherImpl: PokemonAPIFetcher, @unchecked Sendable {
     private let session: URLSession
     private let decoder: JSONDecoder
 

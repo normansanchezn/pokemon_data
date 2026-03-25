@@ -19,7 +19,29 @@ public struct PokemonDetailEntity: Codable, Sendable {
 }
 
 public struct PokemonSpritesEntity: Codable, Sendable {
+    public let other: OtherEntity?
+}
+
+public struct OtherEntity: Codable, Sendable {
+    public let showdown: ShowdownEntity?
+}
+
+public struct DreamWorldEntity: Codable, Sendable {
     public let frontDefault: String?
+    public let frontFemale: String?
+    
+    
+}
+
+public struct ShowdownEntity: Codable, Sendable {
+    public let backDefault: String?
+    public let backFemale: String?
+    public let backShiny: String?
+    public let backShinyFemale: String?
+    public let frontDefault: String?
+    public let frontFemale: String?
+    public let frontShiny: String?
+    public let frontShinyFemale: String?
 }
 
 public struct PokemonTypeEntity: Codable, Sendable {

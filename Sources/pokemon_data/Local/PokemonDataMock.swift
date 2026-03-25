@@ -18,7 +18,7 @@ public struct PokemonDataMock {
             .init(
                 id: 1,
                 name: "Bulbasaur",
-                types: [PokemonType.weed, PokemonType.poison],
+                types: [PokemonType.grass, PokemonType.poison],
                 url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/1.gif"
             ),
             .init(

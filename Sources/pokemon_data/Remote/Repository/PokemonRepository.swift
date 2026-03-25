@@ -21,43 +21,57 @@ private extension [PokemonDetailEntity] {
                 id: item.id,
                 name: item.name,
                 types: item.types.compactMap { $0.transform() },
-                url: item.sprites?.frontDefault ?? ""
+                url: item.frontDefaultImageURL
             )
         }
+    }
+}
+
+private extension PokemonDetailEntity {
+    var frontDefaultImageURL: String {
+        sprites?.other?.showdown?.frontDefault ?? ""
     }
 }
 
 extension PokemonTypeEntity {
     func transform() -> PokemonType? {
         switch type.name.lowercased() {
+        case "normal":
+            return .normal
+        case "fighting":
+            return .fighting
+        case "flying":
+            return .flying
+        case "poison":
+            return .poison
+        case "ground":
+            return .ground
+        case "rock":
+            return .rock
         case "grass":
-            return .weed
+            return .grass
         case "fire":
             return .fire
         case "water":
             return .water
-        case "ground":
-            return .earth
-        case "bug":
-            return .bug
+        case "electric":
+            return .electric
         case "psychic":
             return .psychic
-        case "flying":
-            return .flying
         case "ice":
             return .ice
         case "dragon":
             return .dragon
-        case "ghost":
-            return .ghost
         case "dark":
             return .dark
+        case "bug":
+            return .bug
+        case "ghost":
+            return .ghost
         case "steel":
             return .steel
         case "fairy":
             return .fairy
-        case "poison":
-            return .poison
         default:
             return nil
         }
