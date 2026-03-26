@@ -1,10 +1,6 @@
 import Foundation
 
-public enum PokemonAPIFetcherError: Error {
-    case invalidURL
-}
-
-public final class PokemonAPIFetcherImpl: PokemonAPIFetcher, @unchecked Sendable {
+public final class PokemonAPIStoreImpl: PokemonAPIStore, @unchecked Sendable {
     private let session: URLSession
     private let decoder: JSONDecoder
 
@@ -18,8 +14,8 @@ public final class PokemonAPIFetcherImpl: PokemonAPIFetcher, @unchecked Sendable
     }
 
     public func execute() async throws -> [PokemonDetailEntity] {
-        guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=150&offset=0") else {
-            throw PokemonAPIFetcherError.invalidURL
+        guard let url = URL(string: PokemonAPI.POKE_API + PokemonAPI.LIST_POKEMON_END_POINT) else {
+            throw PokemonAPIError.invalidURL
         }
 
         let (data, _) = try await session.data(from: url)

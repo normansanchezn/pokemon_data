@@ -3,9 +3,9 @@ import pokemon_domain
 import pokemon_shared
 
 public struct PokemonRepositoryImpl: PokemonRepository {
-    private let api: PokemonAPIFetcher
+    private let api: PokemonAPIStore
 
-    public init(api: PokemonAPIFetcher) {
+    public init(api: PokemonAPIStore) {
         self.api = api
     }
 
