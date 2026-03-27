@@ -9,8 +9,5 @@ import Foundation
 import pokemon_shared
 
 struct PokemonListResponse: Codable, Sendable {
-    let count: Int
-    let next: String?
-    let previous: String?
     let results: [PokemonEntity]
 }

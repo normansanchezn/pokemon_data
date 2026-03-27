@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import pokemon_shared
 
 public protocol PokemonAPIStore: Sendable {
-    func execute() async throws -> [PokemonDetailEntity]
+    func execute(limit: Int, offset: Int) async throws -> [Pokemon]
+    func getPokemonDetails(pokemonID: Int) async throws -> DetailsPokemon
 }

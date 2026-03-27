@@ -2,7 +2,7 @@
 //  OtherEntity.swift
 //  pokemon_data
 //
-//  Created by Norman Sánchez on 26/03/26.
+//  Created by Codex on 26/03/26.
 //
 
 import Foundation

@@ -9,11 +9,11 @@ import Foundation
 
 public struct PokemonDetailEntity: Codable, Sendable {
     public let id: Int
-    public let abilities: [PokemonAbilityEntity]
-    public let baseExperience: Int
-    public let height: Int
     public let name: String
     public let types: [PokemonTypeEntity]
     public let sprites: PokemonSpritesEntity?
+    public let abilities: [PokemonAbilityEntity]
+    public let moves: [PokemonMoveEntity]
     public let weight: Int
+    public let height: Int
 }
