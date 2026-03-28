@@ -22,7 +22,8 @@ let package = Package(
     dependencies: [
         // If pokemon_shared is a local package in your workspace, adjust the path accordingly.
         .package(name: "pokemon_shared", path: "../pokemon_shared"),
-        .package(name: "pokemon_domain", path: "../pokemon_domain")
+        .package(name: "pokemon_domain", path: "../pokemon_domain"),
+        .package(url: "https://github.com/supabase/supabase-swift", from: "2.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -31,7 +32,8 @@ let package = Package(
             name: "pokemon_data",
             dependencies: [
                 .product(name: "pokemon_shared", package: "pokemon_shared"),
-                .product(name: "pokemon_domain", package: "pokemon_domain")
+                .product(name: "pokemon_domain", package: "pokemon_domain"),
+                .product(name: "Supabase", package: "supabase-swift")
             ]
         ),
         .testTarget(
